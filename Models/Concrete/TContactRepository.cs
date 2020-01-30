@@ -80,7 +80,7 @@ namespace ContactsCoreMVC.Models.Concrete
       if(contactToUpdate != null){
           contactToUpdate.ContactType = contactTable.ContactType;
           contactToUpdate.Email = contactTable.Email;
-          TableOperation updateContact = TableOperation.Replace(contactTable);
+          TableOperation updateContact = TableOperation.Replace(contactToUpdate);
           var updateResult = await _cloudTable.ExecuteAsync(updateContact);
           return updateResult.Result as ContactTable;
       }
